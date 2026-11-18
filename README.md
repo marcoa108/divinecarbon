@@ -8,6 +8,8 @@ Download [index.html](./index.html) and open the saved file in a browser with We
 
 ## Explore
 
+Use the language selector in the header to choose among 21 languages. Translations are embedded in the HTML and work offline. The browser remembers your selection. Arabic and Persian use a right-to-left layout.
+
 | Control | Action |
 | --- | --- |
 | Drag | Rotate the model |
