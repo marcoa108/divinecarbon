@@ -39,7 +39,7 @@
   <section id="quantum-panel" hidden><div class="section-kicker"><span>06 / C</span><span>PROBABILITY DENSITY</span></div><h2>The carbon atom</h2><p class="description">Six electrons. Probability clouds, with no prescribed flight paths.</p><div class="configuration">1s² &nbsp; 2s² &nbsp; 2p²<span>GROUND-STATE CONFIGURATION</span></div><label class="select-label" for="orbital">Show probability samples</label><select id="orbital"><option value="total">All electrons · spherical average</option><option value="1s">1s · 2 electrons</option><option value="2s">2s · 2 electrons</option><option value="2px">2pₓ · orbital basis example</option><option value="2py">2pᵧ · orbital basis example</option><option value="2pz">2p_z · orbital basis example</option></select><p id="orbital-description" class="description small">Dot positions sample the total density of an unpolarized atom. More dots in a region mean greater probability.</p><div class="physics-key"><i></i> Probability sample <span>≠ one electron</span></div><p class="micro">Screened hydrogenic approximation. The nucleus is enlarged for visibility. Distances in a₀; no electron correlation.</p><button id="quantum-spin" class="subtle">↻ Rotate the cloud</button></section>
  </aside>
  <div class="canvas-tools"><button id="zoom-in" class="icon-button" aria-label="Zoom in" title="Zoom in">+</button><button id="zoom-out" class="icon-button" aria-label="Zoom out" title="Zoom out">−</button><span></span><button id="reset" class="icon-button" aria-label="Reset view" title="Reset view (R)">↺</button><button id="snapshot" class="icon-button" aria-label="Save image" title="Save PNG image">↓</button></div>
- <footer><span id="footnote">Artistic sp³-inspired geometry · Red curves are symbolic, not electron paths.</span><span class="gestures">DRAG <b>rotate</b><i>·</i> SCROLL <b>zoom</b><i>·</i> RIGHT-DRAG <b>pan</b></span></footer>
+ <footer><span id="footnote">Artistic sp³-inspired surfaces · Visual representation consistent with the indications and teachings of Shri Mataji Nirmala Devi</span><span class="gestures">DRAG <b>rotate</b><i>·</i> SCROLL <b>zoom</b><i>·</i> RIGHT-DRAG <b>pan</b></span></footer>
  <div id="toast" role="status" aria-live="polite"></div>
 </main>
 <dialog id="info"><div class="dialog-head"><span class="eyebrow">ABOUT THIS STUDY</span><button id="close-info" class="icon-button" aria-label="Close information">×</button></div><h2>One element.<br>Two ways of looking.</h2><p><em>Divine carbon atom</em> is an interactive reconstruction inspired by your carbon-atom video, presentation, GIF and the article <em>Spiritual Secrets in the Carbon Atom</em>.</p><h3>The symbolic construction</h3><p>Four curves meet at a common centre and terminate at the vertices of a regular tetrahedron (109.47° between axes). The same curves and adapted translucent lobes are viewed from different angles. The Aum loop, swastika elbows and alpha-and-omega arches are projections of the same four spiral surface ribbons from the supplied video.</p><p>The four rounded balloons have straight tetrahedral centre axes and recall the sp³ hybrid-orbital basis used in tetrahedral bonding. Their shared surface definition keeps the red lines attached when the width or expression changes. The width of each ring and the angle of its ink trace were fitted jointly across the video frames. These surfaces and red curves are artistic geometry. They are not calculated electron orbitals or high-probability spiral paths.</p>
@@ -1683,6 +1683,7 @@ class OrbitControls extends EventDispatcher {
 (()=>{'use strict';
 const $=id=>document.getElementById(id), M=CarbonModel, V=THREE.Vector3, Q=THREE.Quaternion;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const symbolicFootnote=$('footnote').textContent;
 const overlay={
  opacity:.22,
  visible:false,
@@ -1833,7 +1834,7 @@ function setMode(next){
  $('forms').hidden=next!=='symbol';$('app').classList.toggle('quantum-active',next!=='symbol');
  symbolic.visible=next!=='quantum';quantum.visible=next==='quantum';centreCamera();camera.zoom=1;
  $('mode-caption').textContent={symbol:'SYMBOLIC GEOMETRY',quantum:'CARBON · QUANTUM MODEL'}[next];
- $('footnote').textContent=next==='quantum'?'Screened hydrogenic approximation · Dots sample electron probability.':'Artistic sp³-inspired surfaces · Ink follows the supplied illustrations.';
+ $('footnote').textContent=next==='quantum'?'Screened hydrogenic approximation · Dots sample electron probability.':symbolicFootnote;
  $('intro-copy').innerHTML=next==='quantum'?'Six electrons.<br>A field of possibilities.':'A single structure.<br>Different ways of seeing.';
  if(next==='quantum'){
    setLens([0,1]);root.quaternion.copy(orientation([1,.7,1.5]));rebuildCloud();
