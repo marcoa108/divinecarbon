@@ -127,7 +127,7 @@ dialog pre { text-align: left; }
 </details>
 <details id="fine-tune">
      <summary>Fine-tune the view <span>+</span></summary>
-     <div class="toggle-row"><label><input type="checkbox" id="cylindrical-ends"><span>Cylindrical ribbon ends at the centre</span></label></div>
+     <div class="toggle-row"><label><input type="checkbox" id="cylindrical-ends" checked><span>Cylindrical ribbon ends at the centre</span></label></div>
      <label for="roll">View roll <output id="roll-value">0°</output></label><input id="roll" type="range" min="-180" max="180" step="1" value="0">
      <label for="speed">Tour pace <output id="speed-value">8 s / form</output></label><input id="speed" type="range" min="4" max="16" step="1" value="8">
      <div class="button-pair"><button id="save-view" class="subtle">Save this angle</button><button id="restore" class="subtle">Restore defaults</button></div>
@@ -2257,7 +2257,7 @@ $('restore').onclick=()=>{
  }
  $('speed').value=8;showPace();
  $('frame').checked=true;$('shells').checked=settings.shells;
- $('cylindrical-ends').checked=false;
+ $('cylindrical-ends').checked=$('cylindrical-ends').defaultChecked;
  rebuildSymbol();camera.zoom=1;camera.updateProjectionMatrix();selectView(active);toast('Default geometry and angles restored');
 };
 function zoom(mult){camera.zoom=THREE.MathUtils.clamp(camera.zoom*mult,.45,5);camera.updateProjectionMatrix();dirty=true;}

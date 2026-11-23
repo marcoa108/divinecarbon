@@ -22,7 +22,7 @@ Use the language selector in the header to choose among 21 languages. Translatio
 | **Curve expression** and **Ribbon spread** | Adjust the shared ribbon geometry. The starting values are 103% and 100%. |
 | **Probability cloud** | Expand the controls and check **Show probability cloud**. Select any combination of 1s, 2s, 2p<sub>x</sub>, 2p<sub>y</sub> and 2p<sub>z</sub>. Cloud size starts at 100% and cloud opacity at 34%. |
 | **Link to tetrahedral lobes** | Align a selected 2p axis with a tetrahedral lobe. |
-| **Fine-tune the view** | Turn on **Cylindrical ribbon ends at the centre** to give all four ribbons a full-width circular end where they meet. Pointed ends are the default. You can also adjust the roll and tour pace or save a viewing angle. |
+| **Fine-tune the view** | All four ribbons have cylindrical ends at the centre by default. Uncheck **Cylindrical ribbon ends at the centre** for pointed ends. You can also adjust the roll and tour pace or save a viewing angle. |
 | **↓** | Export the current canvas as a PNG |
 
 ## Reading the overlay
