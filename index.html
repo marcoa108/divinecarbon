@@ -2032,7 +2032,12 @@ const descriptions=[
  'Two upper arcs cross to form a narrow loop. The lower pair opens into an arch with upturned feet.'
 ];
 const titles=['Aum','Swastika','Alpha & omega'];
-const presets=['aum','swastika','alpha'].map(k=>M.schematic.views[k]);
+const views=M.schematic.views;
+// The opening Aum pose was registered to the four frame corners in the mobile reference.
+const presets=[
+ {...views.aum,rotation:[-.5150098900,.1456697595,.4322205080,.7257620594]},
+ views.swastika,views.alpha
+];
 const lens=[0,1];
 let active=0,mode='symbol',tour=false,cloudSpin=false,tourClock=0,transition=null,lastTime=0,dirty=true,toastTimer;
 const viewStorageKey='divine-carbon-video-views-v3';
